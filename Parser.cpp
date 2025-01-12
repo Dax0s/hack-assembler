@@ -39,8 +39,8 @@ std::string Parser::ParseJump(const std::string& command) {
     return "";
 }
 
-ParsedCommand Parser::ParseCommand(const std::string& command) {
-    ParsedCommand result;
+ParsedCCommand Parser::ParseCCommand(const std::string& command) {
+    ParsedCCommand result;
 
     result.dest = ParseDest(command);
     result.comp = ParseComp(command);

@@ -1,5 +1,6 @@
 #include "BinaryConverter.h"
 
+#include "Parser.h"
 #include "Utils.h"
 
 std::string BinaryConverter::DestToBin(const std::string &dest) {
@@ -135,4 +136,15 @@ std::string BinaryConverter::CompToBin(const std::string& comp) {
     }
 
     return "0000000";
+}
+
+std::string BinaryConverter::CommandToBin(const std::string& command) {
+    const auto [dest, comp, jump] = Parser::ParseCCommand(command);
+
+    std::string commandBin = "111";
+    commandBin += CompToBin(comp);
+    commandBin += DestToBin(dest);
+    commandBin += JumpToBin(jump);
+
+    return commandBin;
 }

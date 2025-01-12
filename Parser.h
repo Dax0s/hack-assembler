@@ -3,7 +3,7 @@
 
 #include <string>
 
-struct ParsedCommand {
+struct ParsedCCommand {
     std::string dest;
     std::string comp;
     std::string jump;
@@ -15,7 +15,7 @@ public:
     static std::string ParseComp(const std::string& command);
     static std::string ParseJump(const std::string& command);
 
-    static ParsedCommand ParseCommand(const std::string& command);
+    static ParsedCCommand ParseCCommand(const std::string& command);
 };
 
 #endif //PARSER_H
