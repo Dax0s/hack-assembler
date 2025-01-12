@@ -5,4 +5,8 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(HackAssembler main.cpp
         Parser.cpp
-        Parser.h)
+        Parser.h
+        BinaryConverter.cpp
+        BinaryConverter.h
+        Utils.cpp
+        Utils.h)
