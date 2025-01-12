@@ -3,7 +3,7 @@
 #include "Utils.h"
 
 std::string Parser::ParseDest(const std::string& command) {
-    int index = FindChar(command, '=');
+    const int index = FindChar(command, '=');
     if (index == -1) return "";
 
     return ClearWhitespace(command.substr(0, index));
@@ -17,13 +17,11 @@ std::string Parser::ParseComp(const std::string& command) {
     }
 
     if (index0 == -1) {
-        const int index1 = FindChar(command, ';');
-        if (index1 != -1) {
+        if (const int index1 = FindChar(command, ';'); index1 != -1) {
             comp = command.substr(0, index1);
         }
     } else {
-        const int index1 = FindChar(comp, ';');
-        if (index1 != -1) {
+        if (const int index1 = FindChar(comp, ';'); index1 != -1) {
             comp = comp.substr(0, index1);
         }
     }
@@ -47,4 +45,9 @@ ParsedCCommand Parser::ParseCCommand(const std::string& command) {
     result.jump = ParseJump(command);
 
     return result;
+}
+
+int Parser::ParseACommand(const std::string& command) {
+    const std::string commandClear = ClearWhitespace(command);
+    return std::stoi(commandClear.substr(1, commandClear.length() - 1));
 }

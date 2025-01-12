@@ -9,7 +9,8 @@ public:
     static std::string JumpToBin(const std::string& jump);
     static std::string CompToBin(const std::string& comp);
 
-    static std::string CommandToBin(const std::string& command);
+    static std::string CCommandToBin(const std::string& command);
+    static std::string ACommandToBin(const std::string& command);
 };
 
 #endif //BINARYCONVERTER_H

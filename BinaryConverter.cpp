@@ -1,5 +1,7 @@
 #include "BinaryConverter.h"
 
+#include <bitset>
+
 #include "Parser.h"
 #include "Utils.h"
 
@@ -138,7 +140,7 @@ std::string BinaryConverter::CompToBin(const std::string& comp) {
     return "0000000";
 }
 
-std::string BinaryConverter::CommandToBin(const std::string& command) {
+std::string BinaryConverter::CCommandToBin(const std::string& command) {
     const auto [dest, comp, jump] = Parser::ParseCCommand(command);
 
     std::string commandBin = "111";
@@ -147,4 +149,8 @@ std::string BinaryConverter::CommandToBin(const std::string& command) {
     commandBin += JumpToBin(jump);
 
     return commandBin;
+}
+
+std::string BinaryConverter::ACommandToBin(const std::string& command) {
+    return std::bitset<16>(Parser::ParseACommand(command)).to_string();
 }

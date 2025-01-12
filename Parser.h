@@ -16,6 +16,7 @@ public:
     static std::string ParseJump(const std::string& command);
 
     static ParsedCCommand ParseCCommand(const std::string& command);
+    static int ParseACommand(const std::string& command);
 };
 
 #endif //PARSER_H
