@@ -13,13 +13,10 @@ std::string ClearWhitespace(const std::string &s) {
     result.reserve(s.length());
 
     for (int i = 0; i < s.length(); i++) {
-        if (s[i] != ' ') {
+        if (s[i] != ' ' && s[i] != '\t' && s[i] != '\n' && s[i] != '\r') {
             result += s[i];
         }
     }
-
-    int a = s.length();
-    int b = result.length();
 
     return result;
 }
