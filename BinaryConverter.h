@@ -1,16 +1,12 @@
-//
-// Created by Domas Klimavicius on 12/01/2025.
-//
-
 #ifndef BINARYCONVERTER_H
 #define BINARYCONVERTER_H
 
-
+#include <string>
 
 class BinaryConverter {
-
+public:
+    static std::string DestToBin(const std::string& dest);
+    static std::string JumpToBin(std::string dest);
 };
-
-
 
 #endif //BINARYCONVERTER_H
