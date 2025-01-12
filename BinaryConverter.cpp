@@ -22,28 +22,117 @@ std::string BinaryConverter::DestToBin(const std::string &dest) {
     return destBin;
 }
 
-std::string BinaryConverter::JumpToBin(const std::string& dest) {
-    if (dest == "JGT") {
+std::string BinaryConverter::JumpToBin(const std::string& jump) {
+    if (jump == "JGT") {
         return "001";
     }
-    if (dest == "JEQ") {
+    if (jump == "JEQ") {
         return "010";
     }
-    if (dest == "JGE") {
+    if (jump == "JGE") {
         return "011";
     }
-    if (dest == "JLT") {
+    if (jump == "JLT") {
         return "100";
     }
-    if (dest == "JNE") {
+    if (jump == "JNE") {
         return "101";
     }
-    if (dest == "JLE") {
+    if (jump == "JLE") {
         return "110";
     }
-    if (dest == "JMP") {
+    if (jump == "JMP") {
         return "111";
     }
 
     return "000";
+}
+
+std::string BinaryConverter::CompToBin(const std::string& comp) {
+    if (comp == "0") {
+        return "0101010";
+    }
+    if (comp == "-1") {
+        return "0111111";
+    }
+    if (comp == "-1") {
+        return "0111010";
+    }
+    if (comp == "D") {
+        return "0001100";
+    }
+    if (comp == "A") {
+        return "0110000";
+    }
+    if (comp == "M") {
+        return "1110000";
+    }
+    if (comp == "!D") {
+        return "0001101";
+    }
+    if (comp == "!A") {
+        return "0110001";
+    }
+    if (comp == "!M") {
+        return "1110001";
+    }
+    if (comp == "-D") {
+        return "0001111";
+    }
+    if (comp == "-A") {
+        return "0110011";
+    }
+    if (comp == "-M") {
+        return "1110011";
+    }
+    if (comp == "D+1" || comp == "1+D") {
+        return "0011111";
+    }
+    if (comp == "A+1" || comp == "1+A") {
+        return "0110111";
+    }
+    if (comp == "M+1" || comp == "1+M") {
+        return "1110111";
+    }
+    if (comp == "D-1") {
+        return "0001110";
+    }
+    if (comp == "A-1") {
+        return "0110010";
+    }
+    if (comp == "M-1") {
+        return "1110010";
+    }
+    if (comp == "D+A" || comp == "A+D") {
+        return "0000010";
+    }
+    if (comp == "D+M" || comp == "M+D") {
+        return "1000010";
+    }
+    if (comp == "D-A") {
+        return "0010011";
+    }
+    if (comp == "D-M") {
+        return "1010011";
+    }
+    if (comp == "A-D") {
+        return "0000111";
+    }
+    if (comp == "M-D") {
+        return "1000111";
+    }
+    if (comp == "D&A" || comp == "A&D") {
+        return "0000000";
+    }
+    if (comp == "D&M" || comp == "M&D") {
+        return "1000000";
+    }
+    if (comp == "D|A" || comp == "A|D") {
+        return "0010101";
+    }
+    if (comp == "D|M" || comp == "M|D") {
+        return "1010101";
+    }
+
+    return "0000000";
 }
