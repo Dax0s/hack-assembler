@@ -22,9 +22,7 @@ std::string BinaryConverter::DestToBin(const std::string &dest) {
     return destBin;
 }
 
-std::string BinaryConverter::JumpToBin(std::string dest) {
-    dest = ClearWhitespace(dest);
-
+std::string BinaryConverter::JumpToBin(const std::string& dest) {
     if (dest == "JGT") {
         return "001";
     }
