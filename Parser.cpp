@@ -51,3 +51,11 @@ int Parser::ParseACommand(const std::string& command) {
     const std::string commandClear = ClearWhitespace(command);
     return std::stoi(commandClear.substr(1, commandClear.length() - 1));
 }
+
+int Parser::ParseCommandType(const std::string& command) {
+    if (ClearWhitespace(command)[0] == '@') {
+        return 0;
+    }
+
+    return 1;
+}

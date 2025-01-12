@@ -17,6 +17,13 @@ public:
 
     static ParsedCCommand ParseCCommand(const std::string& command);
     static int ParseACommand(const std::string& command);
+
+    /**
+     * Checks whether the command passed in is an A or C command
+     * @param command command string
+     * @return 0 if A command, 1 if C command
+     */
+    static int ParseCommandType(const std::string& command);
 };
 
 #endif //PARSER_H

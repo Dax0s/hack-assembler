@@ -11,6 +11,8 @@ public:
 
     static std::string CCommandToBin(const std::string& command);
     static std::string ACommandToBin(const std::string& command);
+
+    static std::string CommandToBin(const std::string& command);
 };
 
 #endif //BINARYCONVERTER_H

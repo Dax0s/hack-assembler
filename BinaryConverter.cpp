@@ -154,3 +154,21 @@ std::string BinaryConverter::CCommandToBin(const std::string& command) {
 std::string BinaryConverter::ACommandToBin(const std::string& command) {
     return std::bitset<16>(Parser::ParseACommand(command)).to_string();
 }
+
+std::string BinaryConverter::CommandToBin(const std::string& command) {
+    const int commandType = Parser::ParseCommandType(command);
+    std::string commandBin;
+
+    switch (commandType) {
+        case 0:
+            commandBin = ACommandToBin(command);
+            break;
+        case 1:
+            commandBin = CCommandToBin(command);
+            break;
+        default:
+            commandBin = "0000000000000000";
+    }
+
+    return commandBin;
+}
