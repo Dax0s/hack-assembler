@@ -24,6 +24,7 @@ int main(const int argc, char *argv[]) {
                     outputFile << BinaryConverter::CommandToBin(line) << std::endl;
                 }
             }
+            outputFile << std::endl;
             outputFile.close();
         }
         inputFile.close();
