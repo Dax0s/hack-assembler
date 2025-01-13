@@ -55,7 +55,7 @@ std::string BinaryConverter::CompToBin(const std::string& comp) {
     if (comp == "0") {
         return "0101010";
     }
-    if (comp == "-1") {
+    if (comp == "1") {
         return "0111111";
     }
     if (comp == "-1") {
