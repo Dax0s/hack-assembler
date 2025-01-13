@@ -8,7 +8,7 @@ int main(const int argc, char *argv[]) {
         return 1;
     }
 
-    const HackAssembler assembler(argv[1]);
+    HackAssembler assembler(argv[1]);
     assembler.Assemble();
 
     return 0;
