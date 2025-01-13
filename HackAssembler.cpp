@@ -33,3 +33,23 @@ void HackAssembler::Assemble() const {
         std::cerr << "Failed to open file " << m_input << std::endl;
     }
 }
+
+
+std::unordered_map<std::string, int> HackAssembler::CreateSymbolTable() {
+    std::unordered_map<std::string, int> symbolTable;
+
+    for (int i = 0; i < 16; i++) {
+        symbolTable[std::format("R{}", i)] = i;
+    }
+
+    symbolTable["SCREEN"] = 16384;
+    symbolTable["KBD"] = 24576;
+
+    symbolTable["SP"] = 0;
+    symbolTable["LCL"] = 1;
+    symbolTable["ARG"] = 2;
+    symbolTable["THIS"] = 3;
+    symbolTable["THAT"] = 4;
+
+    return symbolTable;
+}
