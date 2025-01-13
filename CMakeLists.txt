@@ -9,4 +9,6 @@ add_executable(HackAssembler main.cpp
         BinaryConverter.cpp
         BinaryConverter.h
         Utils.cpp
-        Utils.h)
+        Utils.h
+        HackAssembler.cpp
+        HackAssembler.h)
